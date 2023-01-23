@@ -5,6 +5,7 @@ describe("The cars tab tesy will verify the cars tab functionality", () => {
   const drop_off_input = "[name=dropoff]";
   const pick_up_input= "[name=pickup]"
   const car_group_list ='[name="car-group"]'
+  const driver_age='[name="driver-age"]'
 
 
   beforeEach(() => {
@@ -36,5 +37,22 @@ describe("The cars tab tesy will verify the cars tab functionality", () => {
     cy.get(car_group_list).select('Group 3',{force: true})
     cy.get('[title="Group 3"]').should ('be.visible')
   });
-  
+
+  it("choses driver's age", () => {
+    cy.get(driver_age).should ('be.visible')
+    cy.get(driver_age).select('23',{force: true})
+    cy.get('[title="23"]').should ('be.visible')
+
+    cy.get(driver_age).select('24',{force: true})
+    cy.get('[title="24"]').should ('be.visible')
+
+    cy.get(driver_age).select('25',{force: true})
+    cy.get('[title="25"]').should ('be.visible')
+
+    cy.get(driver_age).select('26',{force: true})
+    cy.get('[title="26"]').should ('be.visible')
+ 
+    
+
+})
 })
